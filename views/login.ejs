@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            $("#submitBtn").on("click", function(e) {
+                e.preventDefault();
+
+                $("#frm").attr("method", "post");
+                $("#frm").attr("action", "/login/auth");
+                $("#frm").submit();
+            });
+        });
+    </script>
+</head>
+<body>
+<form id="frm" name="frm" method="post">
+<div>
+    <div>
+        이메일 : <input type="text" id="email" name="email" value="" placeholder="이메일"/>
+    </div>
+    <div>
+        패스워드 : <input type="text" id="password" name="password" value="" placeholder="패스워드"/>
+    </div>
+    <div>
+        <input type="button" id="submitBtn" name="submitBtn" value="전송"/>
+    </div>
+</div>
+</form>
+</body>
+</html>
